@@ -25,9 +25,9 @@ function App() {
   return !loading ? (
     <div className='flex flex-wrap items-center justify-center bg-slate-100 '>
       <div className='flex flex-col w-full'>
-        <Header />
+        <Header  />
         <main>
-          <Outlet className=' '/>
+          <Outlet className='flex-grow'/>
         </main>
         <Footer />
       </div>

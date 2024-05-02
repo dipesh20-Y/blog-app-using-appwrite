@@ -14,7 +14,7 @@ export class Service {
     this.bucket = new Storage(this.client)
   }
 
-  async createPost({ title, slug, content, "featured-image": featuredImage, status, "user-id": userId, userName, userLabel }) {
+  async createPost({ title, slug, content,  featuredImage, status,  userId, userName, userLabel }) {
     try {
       return await this.databases.createDocument(
         config.appWriteDatabaseId,
@@ -23,9 +23,9 @@ export class Service {
         {
           title,
           content,
-          'featured-image':featuredImage,
+          featuredImage,
           status,
-          "user-id": userId,
+          userId,
           userName,
           userLabel,
         }
@@ -35,7 +35,7 @@ export class Service {
     }
   }
 
-  async updatePost(slug, { title, content, "featured-image":featuredImage, status }) {
+  async updatePost(slug, { title, content, featuredImage, status }) {
     try {
       return await this.databases.updateDocument(
         config.appWriteDatabaseId,
@@ -44,7 +44,7 @@ export class Service {
         {
           title,
           content,
-          'featured-image':featuredImage,
+          featuredImage,
           status,
         }
       )
